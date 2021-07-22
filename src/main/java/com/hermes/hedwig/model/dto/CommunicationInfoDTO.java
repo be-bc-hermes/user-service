@@ -3,15 +3,13 @@ package com.hermes.hedwig.model.dto;
 import lombok.Builder;
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
 @Builder
-public class UserDTO {
+public class CommunicationInfoDTO implements Serializable {
 
     private Long id;
 
-    private String fullName;
-
     private String email;
-
-    // comm info contains?
 }

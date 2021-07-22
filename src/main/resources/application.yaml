@@ -1,7 +1,24 @@
+server:
+  port: 8080
+
 spring:
-  application:
-    name: user-service
-  data:
-    mongodb:
-      uri: mongodb://localhost:27017/userdb
+  datasource:
+    dbName: userdb
+    url: jdbc:postgresql://localhost:5432/${spring.datasource.dbName}
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: true
+        format_sql: true
+  rabbitmq:
+    queue: hedwig.user.info
+    exchange: hedwig.user.exchange
+    routingKey: hedwig.user.info.routingKey
+
+
 
