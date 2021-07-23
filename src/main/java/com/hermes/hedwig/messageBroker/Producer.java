@@ -19,7 +19,7 @@ public class Producer {
     @Value("${spring.rabbitmq.exchange}")
     private String exchangeName;
 
-
+    // TODO: tum servislerin beraber calisma durumunda buralarin degismesi gerekebilir?
     public void send(Message message) {
         template.convertAndSend(exchangeName, communicationInfoRoutingName, message);
         log.info("Sent message: '{}'", message);

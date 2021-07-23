@@ -25,6 +25,7 @@ public class RabbitMQConfig {
         return new Queue(communicationInfoQueueName, true);
     }
 
+    // TODO: tum servislerin beraber calisma durumunda directExchange in degismesi gerekebilir
     @Bean
     public DirectExchange directExchange(){
         return new DirectExchange(exchange);
