@@ -1,12 +1,12 @@
 server:
-  port: 8080
+  port: 8085
 
 spring:
   datasource:
-    dbName: userdb
+    dbName: hedwig
     url: jdbc:postgresql://localhost:5432/${spring.datasource.dbName}
-    username: postgres
-    password: postgres
+    username: hedwig
+    password: hedwig
   jpa:
     hibernate:
       ddl-auto: create
