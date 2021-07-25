@@ -12,8 +12,8 @@
 
 ### REST endpoints
 
-- localhost:8085/user/add/  --> { "fullName": "sss", "email": "acyeeub@aaa.com"}
-- localhost:8085/user/update/ --> { "id": 1, "fullName": "sss", "email": "acyeeub@aaa.com"}
-- localhost:8085/user/get/1
+- POST -- localhost:8085/user/add/  --> { "fullName": "sss", "email": "acyeeub@aaa.com"}
+- POST -- localhost:8085/user/update/ --> { "id": 1, "fullName": "sss", "email": "acyeeub@aaa.com"}
+- GET -- localhost:8085/user/get/1
 
 
