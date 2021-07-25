@@ -10,3 +10,10 @@
 - docker run --name postgresqldb -e POSTGRES_USER=hedwig -e POSTGRES_PASSWORD=hedwig -p 5432:5432 -d postgres
 - docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 
+### REST endpoints
+
+- localhost:8085/user/add/  --> { "fullName": "sss", "email": "acyeeub@aaa.com"}
+- localhost:8085/user/update/ --> { "id": 1, "fullName": "sss", "email": "acyeeub@aaa.com"}
+- localhost:8085/user/get/1
+
+

@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class RabbitMQConfig {
+public class UserCommunicationInfoConfig {
 
     @Value("${spring.rabbitmq.queue}")
     private String communicationInfoQueueName;
@@ -25,7 +25,6 @@ public class RabbitMQConfig {
         return new Queue(communicationInfoQueueName, true);
     }
 
-    // TODO: tum servislerin beraber calisma durumunda directExchange in degismesi gerekebilir
     @Bean
     public DirectExchange directExchange(){
         return new DirectExchange(exchange);
