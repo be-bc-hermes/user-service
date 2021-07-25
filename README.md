@@ -14,6 +14,6 @@
 
 - POST -- localhost:8085/user/add/  --> { "fullName": "sss", "email": "acyeeub@aaa.com"}
 - POST -- localhost:8085/user/update/ --> { "id": 1, "fullName": "sss", "email": "acyeeub@aaa.com"}
-- GET -- localhost:8085/user/get/1
+- GET -- localhost:8085/user/get/{userId} --> e.g. localhost:8085/user/get/1
 
 
