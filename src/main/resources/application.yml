@@ -1,0 +1,24 @@
+server:
+  port: 8085
+
+spring:
+  datasource:
+    dbName: hedwig
+    url: jdbc:postgresql://localhost:5432/${spring.datasource.dbName}
+    username: hedwig
+    password: hedwig
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: true
+        format_sql: true
+  rabbitmq:
+    queue: hedwig.user.info
+    exchange: hedwig.user.exchange
+    routingKey: hedwig.user.info.routingKey
+
+
+

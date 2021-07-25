@@ -1,45 +1,48 @@
 package com.hermes.hedwig.model.entity;
 
 import com.hermes.hedwig.model.dto.UserDTO;
-import lombok.*;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.Document;
-import javax.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "users")
+@Slf4j
+@Entity
+@Table(name = "users")
 public class User {
 
     @Id
-    private String objectId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-    @NotBlank
+    @Column
+    @NotNull
     private String fullName;
 
-    @NotBlank
-    @Indexed(unique = true)
+    @Column(unique = true)
     private String email;
 
 
-    public User(UserDTO userDTO){
-        this.setObjectId(userDTO.getObjectId());
+    public User(UserDTO userDTO) {
+        this.setId(userDTO.getId());
         this.setFullName(userDTO.getFullName());
         this.setEmail(userDTO.getEmail());
     }
 
 
-    public UserDTO toDTO(){
+    public UserDTO toDTO() {
         return UserDTO.builder()
-                .objectId(this.objectId)
+                .id(this.id)
                 .fullName(this.fullName)
                 .email(this.email)
                 .build();
     }
-
-
 
 
 }

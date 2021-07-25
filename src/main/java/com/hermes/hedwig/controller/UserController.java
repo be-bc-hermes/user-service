@@ -20,7 +20,6 @@ public class UserController {
 
     private final UserService userService;
 
-
     @PostMapping(value = "/add",
                 consumes = MediaType.APPLICATION_JSON_VALUE,
                 produces = MediaType.APPLICATION_JSON_VALUE)
@@ -28,25 +27,22 @@ public class UserController {
         // TODO: validations
         User _user = userService.addUser(userDTO);
         return new ResponseEntity<>(_user, HttpStatus.CREATED);
-//        return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
 
     @GetMapping(value = "/get/{userId}",
                 produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> getUser(@NotNull @PathVariable String userId) {
+    public ResponseEntity<User> getUser(@NotNull @PathVariable Long userId) {
         // TODO: validations
         User user = userService.getUserById(userId);
         return new ResponseEntity<>(user, HttpStatus.OK);
-
-//        producer.produceMsg(msg);
     }
 
 
     @PostMapping(value = "/update",
                 consumes = MediaType.APPLICATION_JSON_VALUE,
                 produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> updateUser(@RequestBody UserDTO userDTO) {
+    public ResponseEntity<User> updateUser(@Valid @RequestBody UserDTO userDTO) {
         // TODO: validations
         return userService.updateUser(userDTO);
     }

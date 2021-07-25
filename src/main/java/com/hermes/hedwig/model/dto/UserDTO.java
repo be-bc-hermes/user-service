@@ -2,13 +2,12 @@ package com.hermes.hedwig.model.dto;
 
 import lombok.Builder;
 import lombok.Data;
-import org.springframework.stereotype.Component;
 
 @Data
 @Builder
 public class UserDTO {
 
-    private String objectId;
+    private Long id;
 
     private String fullName;
 
