@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    dbName: hedwig
+    dbName: user
     url: jdbc:postgresql://localhost:5432/${spring.datasource.dbName}
     username: hedwig
     password: hedwig
